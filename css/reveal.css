@@ -1166,7 +1166,6 @@ body {
 .reveal .overlay .viewport {
   position: absolute;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   top: 40px;
@@ -1363,3 +1362,45 @@ body {
 
 .zoomed .reveal .roll span:after {
   visibility: hidden; }
+
+.types body {
+  background: url("https://cdn-images-1.medium.com/max/800/1*IkUwv_lceATY-tP7Pf5TeQ.jpeg");
+  background-position: center 20%;
+  background-size: 60%;
+  background-color: black;
+  background-repeat: no-repeat; }
+
+.money body {
+  background: url("https://cloud.githubusercontent.com/assets/4806944/4646184/1af61a92-5471-11e4-8f40-a2c69206b49c.gif");
+  background-position: center;
+  background-size: 100%;
+  background-color: black;
+  background-repeat: no-repeat; }
+
+.facebook body {
+  background: url("http://www.lifenews.com/wp-content/uploads/2014/02/markzuckerberg.jpg");
+  background-position: center;
+  background-size: 100%;
+  background-color: black;
+  background-repeat: no-repeat; }
+
+.obama body {
+  background: url("http://i.giphy.com/IMuqnp96sdhyE.gif");
+  background-position: center;
+  background-size: 100%;
+  background-color: black;
+  background-repeat: no-repeat; }
+
+.louis body {
+  background: url("http://i.giphy.com/8mZK9do4ZvxQc.gif");
+  background-position: center;
+  background-size: 100%;
+  background-color: black;
+  background-repeat: no-repeat; }
+
+.boring body {
+  background: url("http://i.giphy.com/jSxK33dwEMbkY.gif");
+  background-position: center;
+  background-size: 100%;
+  background-color: black;
+  background-repeat: no-repeat; }

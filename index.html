@@ -1,50 +1,295 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+        <section>
+            <section>
+                <h2>Is Javascript UnTyped?</h2>
+            </section>
+            <section data-background="http://i.giphy.com/8mZK9do4ZvxQc.gif">
+            </section>
+            <section data-background="#dddddd">
+                <h2>JavaScript data types</h2>
+                <p>
+                    JavaScript is a loosely typed or a dynamic language. That means you don't have to declare the type
+                    of a variable ahead of time. The type will get determined automatically while the program is being
+                    processed. That also means that you can have the same variable as different types:
+                </p>
+                <pre><code class="hljs">
+                    var foo = 42;    // foo is now a Number
+                    var foo = 'bar'; // foo is now a String
+                    var foo = true;  // foo is now a Boolean
+                </code></pre>
+            </section>
+            <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
+                <h2>Data types</h2>
+                <p>The latest ECMAScript standard defines seven data types:</p>
+                <ul>
+                    <li>
+                        Six data types that are primitives:
+                        All types except objects define immutable values (values, which are incapable of being changed)
+                    </li>
+                    <ul>
+                        <li>Boolean</li>
+                        <li>Null</li>
+                        <li>Undefined</li>
+                        <li>Number</li>
+                        <li>String</li>
+                        <li>Symbol (new in ECMAScript 6)</li>
+                    </ul>
+                </ul>
+                <ul>
+                    <li>and Object</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Dynamic typing</h2>
+                <p>The type is associated with the value, and checked at run-time.</p>
+                <h2>Untyped Language</h2>
+                <p>untyped language means the language does not have any type declaration.
+                    Untyped is where operations are valid on everything because it's all a sequence of bits.
+                    Dynamic is completely different and refers to when the type is discovered.
+                    The term Untyped Language is not equivalent to weak typing or to dynamic typing.
+                    It implies a language in which values are simply chunks of bits, such as low-level assembler
+                    languages.
+                    PHP isn't untyped, Ruby isn't untyped.</p>
+            </section>
+            <section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+            </section>
+        </section>
+        <section>
+            <section>
+                Typescript
+            </section>
+            <section>
+                <h4>So Typescript is definatly Typed</h4>
+                <h2>But Is Typescript Static or dynamic?</h2>
+            </section>
+            <section data-background="http://i.giphy.com/IMuqnp96sdhyE.gif">
+            </section>
+            <section>
+                <h2>Static typing</h2>
+                <p>type is associated with variable or textual expression, and checked at compile-time.</p>
+                <pre><code>
+                    function g( a : number ) : number{
+                        return a / 10;
+                    }
+                </code></pre>
+            </section>
+            <section>
+                <h3>Static types, type annotations, and type inference</h3>
+                <blockquote>
+                    “Type inference “ — types can be determined from the context, making type annotations optional.
+                </blockquote>
+                ]
+            </section>
+            <section>
+                <pre><code>
+                function g( a ) {
+                return a / 10;
+                }
+                </code></pre>
+                <p>What? But… It looks just the same as dynamic one!</p>
+            </section>
+            <section>
+                <p>Yeah, it does. :) There are programming languages like Haskell that guarantee that types will be
+                    extracted from the context and
+                    statically checked. Which means that…</p>
+                <blockquote>
+                    You can write the whole program without the single type annotation, and it will be statically typed
+                    program.
+                </blockquote>
+            </section>
+            <section>
+                <img src="https://cdn-images-1.medium.com/max/1600/1*lJNwpVsKaghfDmcg4nJ1uw.png">
+                <p>
+                    The type of “a” is not a number. It’s inferred as any. And the reasons why it happens are very
+                    important.
+                    No, it’s not because TypeScript’s type inference is incapable.
+                    It prefers ‘any’ type to ‘number’, thus it’s dynamic by default as regular JavaScript is. When you
+                    want it to be stricter, you have to add type annotation. Not vice versa.
+                </p>
+            </section>
+            <section>
+                <blockquote>
+                    This mix of the type annotations with “any” type is called Gradual typing. When it prefers “any” by
+                    default, it’s called “Soft type system”. Not exactly an opposite to dynamic, nor to static typing,
+                    but taking the best of both.
+                </blockquote>
+            </section>
+            <section>
+                Valid JavaScript is also valid TypeScript!!
+            </section>
+            <section data-background="http://i.giphy.com/jSxK33dwEMbkY.gif">
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>ES6 features:</h2>
+            </section>
+            <section>
+                <h3>Destructioning</h3>
+                <pre><code>
+                    var obj = {a: 10, b: 20};
+                    var a = obj.a;
+                    var b = obj.b;
+                    return a + b;
+                </code></pre>
+                <pre><code>
+                    const obj = {a: 10, b: 20};
+                    const {a, b} = obj;
+                    return a + b;
+                </code></pre>
+            </section>
+            <section>
+                <h3>Arrow Function</h3>
+                <pre><code>
+                    function run (){
+                        this.count = 0;
+                        setInterval(function(){
+                            this.count++;
+                        }, 1000);
+                    }
+                </code></pre>
+                <pre><code>
+                    function run (){
+                        this.count = 0;
+                        setInterval(() => {
+                            this.count++;
+                        }, 1000);
+                    }
+                </code></pre>
+            </section>
+            <section>
+                <h3>Duck Typing</h3>
+                <img src="https://coronalabs.com/wp-content/uploads/2012/09/duck_typing.png">
+            </section>
+            <section>
+                <h2>TypeScript compiler comes with external declarations for core and DOM libraries (lib.d.ts)</h2>
+            </section>
+            <section>
+                <h2>EXCERPT FROM LIB.D.TS #1</h2>
+                <pre><code>
+                    declare function parseFloat(string: string): number;
 
-		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				history: true,
+                    interface Function {
+                        apply(thisArg: any, ...argArray: any[]): any;
+                        call(thisArg: any, ...argArray: any[]): any;
+                        bind(thisArg: any, ...argArray: any[]): Function;
+                        prototype: any;
+                        length: number;
+                    }
+                </code></pre>
+            </section>
+            <section>
+                <h2>EXCERPT FROM LIB.D.TS #2</h2>
+                <pre><code>
+                    interface Node extends EventTarget {
+                        nodeType: number;
+                        previousSibling: Node;
+                        localName: string;
+                        parentNode: Node;
+                        nextSibling: Node;
+                        // ...
+                    }
+                </code></pre>
+            </section>
+            <section>
+                <h2>Adds tooling and type checking to existing JavaScript libraries</h2>
+            </section>
+            <section>
+                <h2>EXCERPT FROM lodash/index.d.ts</h2>
+                <pre><code>
+                    findLast&lt;T>(
+                        collection: T[],
+                        callback: ListIterator&lt;T, boolean>,
+                        fromIndex?: number
+                    ): T|undefined;
+                </code></pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h4>Disadavantges</h4>
+                <ul>
+                    <li>Adds a compile step: longer to load and a lot of setup</li>
+                    <li>Code is pretty readable but still not the source code</li>
+                    <li>Adding Types take time and design and are not always clear in advance.</li>
+                </ul>
+            </section>
+            <section>
+                <p>
+                    So do we really need Types? they don't make QA or testing redundant.
+                    Couldn't we just really on good documentation and design?
+                </p>
+            </section>
+            <section>
+                I always make beautiful docs, and I always keep them in sync!
+            </section>
+            <section>
+                <p>Even assuming you’re really belongs to that 1% (no doubt you are). Still, I don’t trust you. Nothing
+                    personal, it’s just because you’re a human. And humans are so unreliable… (How could you really
+                    guarantee that your docs actually conforms to the code? Are you always in the mood? Do you always
+                    have time and no excuses? Don’t you make any mistakes? Are you working on it alone, or there’s a
+                    whole team of superheroes in charge?)</p>
+                <img src="https://cdn-images-1.medium.com/max/2000/0*Ex_I6iUnaYQgU4hF.jpg">
+            </section>
+            <section>
+                <p>Type annotations is the documentation which is checked by compiler against itself and the code; it’s
+                    guaranteed to be correct and up-to date.
+                <p>
+            </section>
+            <section data-state="types">
+                <div style="position: fixed; bottom: 60px; width: 100%; text-align: center; font-size: 1.5rem;">
+                    <div style="padding: 0 100px">
+                        The type system is like training wheels.
+                        It keeps you from falling, at the price of slowing you down and limiting flexibility.
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+</div>
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+  // More info https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    history: true,
+
+    // More info https://github.com/hakimel/reveal.js#dependencies
+    dependencies: [
+      { src: 'plugin/markdown/marked.js' },
+      { src: 'plugin/markdown/markdown.js' },
+      { src: 'plugin/notes/notes.js', async: true },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+    ]
+  });
+</script>
+</body>
 </html>
