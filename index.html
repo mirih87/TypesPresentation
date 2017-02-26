@@ -176,6 +176,47 @@
                  //Function
                  const foo: Function;
                  const goo: (x:string) => boolean;
+                 public dict :{[key:string]:number} = {key1 :1, key2 :2};
+            </code></pre>
+        </section>
+        <section>
+            <h1>Generics</h1>
+            <pre><code>
+                interface IGetValue{
+                interface IGetValue{
+                    getValues:()=> number;
+                }
+                function getMax<T extends IGetValue>(arr:T[]):T{
+                    let max: T = arr[0];
+                    arr.forEach((item)=>{
+                        if(max.getValue() < item.getValue()){
+                            max = item;
+                        }
+                    });
+                return max;
+                }
+            </code></pre>
+        </section>
+        <section>
+            <h1>Function Overloading</h1>
+            <pre><code>
+                function getTask(taskName:string, deps:string[]) : ITaskGroup;
+                function getTask(taskName:string, fn:Function) : ITask;
+                function getTask(taskName:string, x:any) : any{
+                    if(typeof x === 'function'){
+                        return {
+                            taskName,
+                            fn:x
+                        };
+                    }
+                    if(Array.isArray(x)){
+                        return {
+                            taskName,
+                            deps:x
+                    };
+                }
+                }
+
             </code></pre>
         </section>
         <section>
@@ -289,7 +330,7 @@
         </section>
         <section>
             <section>
-                <h4>Disadavantges</h4>
+                <h4>Disadvantages</h4>
                 <ul>
                     <li>Adds a compile step: longer to load and a lot of setup</li>
                     <li>Code is pretty readable but still not the source code</li>
