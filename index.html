@@ -14,11 +14,11 @@
 
     <!-- Printing and PDF exports -->
     <script>
-      var link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-      document.getElementsByTagName('head')[0].appendChild(link);
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
     </script>
 </head>
 <body>
@@ -82,7 +82,14 @@
         </section>
         <section>
             <section>
-                Typescript
+                <h1>Typescript</h1>
+                <p>
+                    1. Developed by Microsoft (open source)
+                    2. Built on npm
+                    3. Compiled and transpiled to Js with required version
+                    4. Heavily used in Angular2
+                    5. Constantly updated (2.2)
+                </p>
             </section>
             <section>
                 <h4>So Typescript is definatly Typed</h4>
@@ -147,6 +154,31 @@
             </section>
         </section>
         <section>
+            <pre><code>
+                const num: number =1;
+                const str: string = 'Hello';
+                const bool: boolean = true;
+                const mixed1: string|number = 2;
+                const mixed2: string|number = 'World'
+            </code></pre>
+             <pre><code>
+                //Array
+                 const arr:string[] = ['Hello', 'World'];
+                 //Tuple
+                 const tuple:[string,number] = ['Hello', 1];
+                 //Enums
+                 enum Color: {Black,White};
+                 enum Company: {Other = 0, DV =100};
+            </code></pre>
+             <pre><code>
+                //Type
+                 type status = 'Success'|'Error';
+                 //Function
+                 const foo: Function;
+                 const goo: (x:string) => boolean;
+            </code></pre>
+        </section>
+        <section>
             <section>
                 <h2>ES6 features:</h2>
             </section>
@@ -185,7 +217,31 @@
             </section>
             <section>
                 <h3>Duck Typing</h3>
+                <blockquote>
+                    "When I see a bird that walks like a duck and swims like a duck and quacks like a duck,
+                    I call that bird a duck."
+                    <span>James Whitcomb Riley</span>
+                </blockquote>
                 <img src="https://coronalabs.com/wp-content/uploads/2012/09/duck_typing.png">
+            </section>
+            <section>
+                <pre><code>
+                    interface Duck{
+                    walk:()=> void;
+                    swim : () => void;
+                    quack : () => void;
+                    }
+                </code></pre>
+                <pre><code>
+                    let ProbablyADuck = {
+                    walk : () => console.log('walking like a duck');
+                    swim : () => console.log('swimming like a duck');
+                    quack : () => console.log('quacking like a duck');
+                    };
+
+                    function FlyOverWater(bird : Duck){}
+                    FlyOverWater(ProbablyADuck); //works!!!
+                </code></pre>
             </section>
             <section>
                 <h2>TypeScript compiler comes with external declarations for core and DOM libraries (lib.d.ts)</h2>
@@ -278,18 +334,22 @@
 <script src="js/reveal.js"></script>
 
 <script>
-  // More info https://github.com/hakimel/reveal.js#configuration
-  Reveal.initialize({
-    history: true,
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
 
-    // More info https://github.com/hakimel/reveal.js#dependencies
-    dependencies: [
-      { src: 'plugin/markdown/marked.js' },
-      { src: 'plugin/markdown/markdown.js' },
-      { src: 'plugin/notes/notes.js', async: true },
-      { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
-    ]
-  });
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            }
+        ]
+    });
 </script>
 </body>
 </html>
