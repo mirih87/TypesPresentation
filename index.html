@@ -26,6 +26,15 @@
     <div class="slides">
 
         <section>
+            <h1>Agenda</h1>
+            <ol>
+                <li class="fragment">Javascript and Types</li>
+                <li class="fragment">Typescript and Types</li>
+                <li class="fragment">Typescript features</li>
+                <li class="fragment">Typescript?</li>
+            </ol>
+        </section>
+        <section>
             <section>
                 <h1>Is Javascript UnTyped?</h1>
             </section>
@@ -46,24 +55,24 @@
             </section>
             <section data-background="#dddddd">
                 <h2>Data types</h2>
-                <p>The latest ECMAScript standard defines seven data types:</p>
+                <p>The latest ECMAScript standard defines <b fon>seven</b> data types:</p>
+                <p>
+                    Six data types that are primitives: immutable values
+                </p>
                 <ul>
-                    <li>
-                        Six data types that are primitives:
-                        All types except objects define immutable values (values, which are incapable of being changed)
-                    </li>
-                    <ul>
-                        <li>Boolean</li>
-                        <li>Null</li>
-                        <li>Undefined</li>
-                        <li>Number</li>
-                        <li>String</li>
-                        <li>Symbol (new in ECMAScript 6)</li>
-                    </ul>
+                    <li>Boolean</li>
+                    <li>Null</li>
+                    <li>Undefined</li>
+                    <li>Number</li>
+                    <li>String</li>
+                    <li>Symbol (new in ECMAScript 6)</li>
                 </ul>
-                <ul>
-                    <li>and Object</li>
-                </ul>
+                <p class="fragment" style="font-size: 4rem">
+                    And
+                </p>
+                <p class="fragment">
+                    Object
+                </p>
             </section>
             <section data-background="#dddddd">
                 <h2>Dynamic typing</h2>
@@ -86,13 +95,13 @@
         <section>
             <section>
                 <h1>Typescript</h1>
-                <ol>
+                <ul>
                     <li class="fragment">Developed by Microsoft (open source)</li>
                     <li class="fragment">Built on npm</li>
                     <li class="fragment">Compiled and transpiled to Js with required version</li>
                     <li class="fragment">Heavily used in Angular2</li>
                     <li class="fragment">Constantly updated (2.2)</li>
-                </ol>
+                </ul>
             </section>
             <section>
                 <p>Valid JavaScript is also valid TypeScript!!</p>
@@ -119,7 +128,7 @@
             <section>
                 <pre><code>
                 function g( a ) {
-                return a / 10;
+                    return a / 10;
                 }
                 </code></pre>
                 <p>What? But… It looks just the same as dynamic one!</p>
@@ -129,19 +138,16 @@
                     extracted from the context and
                     statically checked. Which means that…</p>
                 <blockquote>
-                    You can write the whole program without the single type annotation, and it will be statically typed
+                    You can write the whole program without a single type annotation, and it will be a statically typed
                     program.
                 </blockquote>
             </section>
             <section>
                 <img src="https://cdn-images-1.medium.com/max/1600/1*lJNwpVsKaghfDmcg4nJ1uw.png">
-                <p>
-                    The type of “a” is not a number. It’s inferred as any. And the reasons why it happens are very
-                    important.
-                    No, it’s not because TypeScript’s type inference is incapable.
-                    It prefers ‘any’ type to ‘number’, thus it’s dynamic by default as regular JavaScript is. When you
-                    want it to be stricter, you have to add type annotation. Not vice versa.
-                </p>
+                <p class="fragment">“a” is not a number, but it’s inferred as any?</p>
+                <p class="fragment">No, it’s not because TypeScript’s type inference is incapable.</p>
+                <p class="fragment">It prefers ‘any’ type to ‘number’, thus it’s dynamic by default as regular JavaScript is.</p>
+                <p class="fragment"> When you want it to be stricter, you have to add type annotation. Not vice versa.</p>
             </section>
             <section>
                 <blockquote>
@@ -156,14 +162,15 @@
         </section>
         <section>
             <section>
-            <pre><code>
+            <h1>Typescript features</h1>
+            <pre class="fragment"><code>
                 const num: number =1;
                 const str: string = 'Hello';
                 const bool: boolean = true;
                 const mixed1: string|number = 2;
                 const mixed2: string|number = 'World'
             </code></pre>
-                <pre><code>
+            <pre class="fragment"><code>
                 //Array
                  const arr:string[] = ['Hello', 'World'];
                  //Tuple
@@ -172,7 +179,7 @@
                  enum Color: {Black,White};
                  enum Company: {Other = 0, DV =100};
             </code></pre>
-                <pre><code>
+            <pre class="fragment"><code>
                 //Type
                  type status = 'Success'|'Error';
                  //Function
@@ -182,26 +189,26 @@
             </code></pre>
         </section>
         <section>
-            <h1>Generics</h1>
-            <pre><code>
+            <h2>Generics</h2>
+            <pre class="fragment"><code>
                 interface IGetValue{
                 interface IGetValue{
                     getValues:()=> number;
                 }
-                function getMax<T extends IGetValue>(arr:T[]):T{
+                function getMax&lt;T extends IGetValue>(arr:T[]):T{
                     let max: T = arr[0];
                     arr.forEach((item)=>{
                         if(max.getValue() < item.getValue()){
                             max = item;
                         }
                     });
-                return max;
+                    return max;
                 }
             </code></pre>
         </section>
         <section>
-            <h1>Function Overloading</h1>
-            <pre><code>
+            <h2>Function Overloading</h2>
+            <pre class="fragment"><code>
                 function getTask(taskName:string, deps:string[]) : ITaskGroup;
                 function getTask(taskName:string, fn:Function) : ITask;
                 function getTask(taskName:string, x:any) : any{
@@ -222,7 +229,7 @@
             </code></pre>
             </section>
             <section>
-                <h1>ES6 features:</h1>
+                <h1>ES6 features</h1>
             </section>
             <section>
                 <h3>Destructioning</h3>
@@ -269,16 +276,16 @@
             <section>
                 <pre><code>
                     interface Duck{
-                    walk:()=> void;
-                    swim : () => void;
-                    quack : () => void;
+                        walk:()=> void;
+                        swim : () => void;
+                        quack : () => void;
                     }
                 </code></pre>
                 <pre  class="fragment"><code>
                     let ProbablyADuck = {
-                    walk : () => console.log('walking like a duck');
-                    swim : () => console.log('swimming like a duck');
-                    quack : () => console.log('quacking like a duck');
+                        walk : () => console.log('walking like a duck');
+                        swim : () => console.log('swimming like a duck');
+                        quack : () => console.log('quacking like a duck');
                     };
 
                     function FlyOverWater(bird : Duck){}
@@ -332,11 +339,16 @@
         </section>
         <section>
             <section>
-                <h4>Disadvantages</h4>
+                <h1>Typescript?</h1>
                 <ul>
-                    <li>Adds a compile step: longer to load and a lot of setup</li>
-                    <li>Code is pretty readable but still not the source code</li>
-                    <li>Adding Types take time and design and are not always clear in advance.</li>
+                    <li class="fragment">Adds a compile step: longer to load and a lot of setup</li>
+                    <li class="fragment">Code is pretty readable but still not the source code</li>
+                    <li class="fragment">Adding Types take time and design and are not always clear in advance.</li>
+                    <li class="fragment">May cause over engineering.</li>
+                    <div class="fragment" style="margin: auto auto;">
+                        <img src="http://australianbusinessclinic.com/wp-content/uploads/2013/06/KISS-sleeping-man.gif" height="300px"  style="float: left">
+                        <img src="https://paljabekkdotcom.files.wordpress.com/2013/10/a5c69-rube_napkin_1.gif" height="300px" style="float: right">
+                    </div>
                 </ul>
             </section>
             <section>
