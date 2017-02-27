@@ -27,7 +27,7 @@
 
         <section>
             <section>
-                <h2>Is Javascript UnTyped?</h2>
+                <h1>Is Javascript UnTyped?</h1>
             </section>
             <section data-background="http://i.giphy.com/8mZK9do4ZvxQc.gif">
             </section>
@@ -86,17 +86,18 @@
         <section>
             <section>
                 <h1>Typescript</h1>
-                <p>
-                    1. Developed by Microsoft (open source)
-                    2. Built on npm
-                    3. Compiled and transpiled to Js with required version
-                    4. Heavily used in Angular2
-                    5. Constantly updated (2.2)
-                </p>
+                <ol>
+                    <li class="fragment">Developed by Microsoft (open source)</li>
+                    <li class="fragment">Built on npm</li>
+                    <li class="fragment">Compiled and transpiled to Js with required version</li>
+                    <li class="fragment">Heavily used in Angular2</li>
+                    <li class="fragment">Constantly updated (2.2)</li>
+                </ol>
             </section>
             <section>
-                <h4>So Typescript is definatly Typed</h4>
-                <h2>But Is Typescript Static or dynamic?</h2>
+                <p>Valid JavaScript is also valid TypeScript!!</p>
+                <p class="fragment">So if javascript is typed so is typescript</p>
+                <h2 class="fragment">But Is Typescript Static or dynamic?</h2>
             </section>
             <section data-background="http://i.giphy.com/IMuqnp96sdhyE.gif">
             </section>
@@ -114,7 +115,6 @@
                 <blockquote>
                     “Type inference “ — types can be determined from the context, making type annotations optional.
                 </blockquote>
-                ]
             </section>
             <section>
                 <pre><code>
@@ -150,13 +150,12 @@
                     but taking the best of both.
                 </blockquote>
             </section>
-            <section>
-                Valid JavaScript is also valid TypeScript!!
-            </section>
             <section data-background="http://i.giphy.com/jSxK33dwEMbkY.gif">
+                <div style="position:absolute; margin-bottom: 40%; left: 0; color:white;text-shadow:2px 2px 2px #000000;font-weight:bolder">This is boooring...<br/> Show me the code</div>
             </section>
         </section>
         <section>
+            <section>
             <pre><code>
                 const num: number =1;
                 const str: string = 'Hello';
@@ -164,7 +163,7 @@
                 const mixed1: string|number = 2;
                 const mixed2: string|number = 'World'
             </code></pre>
-             <pre><code>
+                <pre><code>
                 //Array
                  const arr:string[] = ['Hello', 'World'];
                  //Tuple
@@ -173,27 +172,26 @@
                  enum Color: {Black,White};
                  enum Company: {Other = 0, DV =100};
             </code></pre>
-             <pre><code>
+                <pre><code>
                 //Type
                  type status = 'Success'|'Error';
                  //Function
                  const foo: Function;
                  const goo: (x:string) => boolean;
             </code></pre>
-        </section>
-        <section>
+            </section>
             <section>
-                <h2>ES6 features:</h2>
+                <h1>ES6 features:</h1>
             </section>
             <section>
                 <h3>Destructioning</h3>
-                <pre><code>
+                <pre class="fragment"><code>
                     var obj = {a: 10, b: 20};
                     var a = obj.a;
                     var b = obj.b;
                     return a + b;
                 </code></pre>
-                <pre><code>
+                <pre class="fragment"><code>
                     const obj = {a: 10, b: 20};
                     const {a, b} = obj;
                     return a + b;
@@ -201,7 +199,7 @@
             </section>
             <section>
                 <h3>Arrow Function</h3>
-                <pre><code>
+                <pre class="fragment"><code>
                     function run (){
                         this.count = 0;
                         setInterval(function(){
@@ -209,7 +207,7 @@
                         }, 1000);
                     }
                 </code></pre>
-                <pre><code>
+                <pre class="fragment"><code>
                     function run (){
                         this.count = 0;
                         setInterval(() => {
@@ -219,7 +217,7 @@
                 </code></pre>
             </section>
             <section>
-                <h3>Duck Typing</h3>
+                <h1>Duck Typing</h1>
                 <blockquote>
                     "When I see a bird that walks like a duck and swims like a duck and quacks like a duck,
                     I call that bird a duck."
@@ -235,7 +233,7 @@
                     quack : () => void;
                     }
                 </code></pre>
-                <pre><code>
+                <pre  class="fragment"><code>
                     let ProbablyADuck = {
                     walk : () => console.log('walking like a duck');
                     swim : () => console.log('swimming like a duck');
@@ -247,7 +245,8 @@
                 </code></pre>
             </section>
             <section>
-                <h2>TypeScript compiler comes with external declarations for core and DOM libraries (lib.d.ts)</h2>
+                <h1>External Typing</h1>
+                <p>TypeScript compiler comes with external declarations for core and DOM libraries (lib.d.ts)</p>
             </section>
             <section>
                 <h2>EXCERPT FROM LIB.D.TS #1</h2>
