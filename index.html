@@ -223,7 +223,7 @@
                 title:string;
                 }
                 class Shelf&lt;T extends ShelfItem>{
-                    private _items :  Array<T> = new Array&lt;T();
+                    private _items :  Array&lt;T = new Array&lt;T();
                     add(item:T):void{
                         this._items.push(item);
                     }
@@ -237,9 +237,8 @@
                         this._items.forEach(item => console.log(item.title);)
                     }
                 }
-                let bookShelf: Shelf<Book> = new Shelf<Book>();
-                let magazineShelf: Shelf<Magazine> = new Shelf<Magazine>();
-
+                let bookShelf: Shelf&lt;Book = new Shelf&lt;Book();
+                let magazineShelf: Shelf&lt;Magazine = new Shelf&lt;Magazine();
             </code></pre>
             </section>
             <section>
