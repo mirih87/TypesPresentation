@@ -14,11 +14,11 @@
 
     <!-- Printing and PDF exports -->
     <script>
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-        document.getElementsByTagName('head')[0].appendChild(link);
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
     </script>
 </head>
 <body>
@@ -75,22 +75,16 @@
                 </p>
             </section>
             <section data-background="#dddddd">
-                <h2>Dynamic typing</h2>
-                <p>The type is associated with the value, and checked at run-time.</p>
-                <h2>Untyped Language</h2>
-                <p>untyped language means the language does not have any type declaration.
-                    Untyped is where operations are valid on everything because it's all a sequence of bits.
-                </p>
-                <p>
-                    Dynamic is completely different and refers to when the type is discovered.
-                    The term Untyped Language is not equivalent to weak typing or to dynamic typing.
+                <h2>Conclusion</h2>
+                <p>The term Untyped Language is not equivalent to weak typing or to dynamic typing.
                     It implies a language in which values are simply chunks of bits, such as low-level assembler
-                    languages.
-                    PHP isn't untyped, Ruby isn't untyped.
+                    languages.<br/> Javacsript is dynamically typed.
                 </p>
             </section>
             <section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-                <div style="position:absolute; margin-bottom: 40%; left: -100px; color:white;text-shadow:2px 2px 2px #000000;font-weight:bolder">So Javascript has Types...</div>
+                <div style="position:absolute; margin-bottom: 40%; left: -100px; color:white;text-shadow:2px 2px 2px #000000;font-weight:bolder">
+                    So Javascript has Types...
+                </div>
             </section>
         </section>
         <section>
@@ -106,17 +100,20 @@
             </section>
             <section>
                 <p>Valid JavaScript is also valid TypeScript!!</p>
-                <img class="fragment" src="https://image.slidesharecdn.com/60586670-clojurescript-110722075813-phpapp02/95/why-you-should-be-excited-about-clojurescript-6-728.jpg?cb=1311321554"/>
+                <img class="fragment"
+                     src="https://image.slidesharecdn.com/60586670-clojurescript-110722075813-phpapp02/95/why-you-should-be-excited-about-clojurescript-6-728.jpg?cb=1311321554"/>
             </section>
             <section>
                 <p>So if javascript is typed typescript obviously is.</p>
                 <p style="font-size: 4rem" class="fragment">But Is Typescript Static or dynamic?</p>
             </section>
             <section data-background="http://i.giphy.com/IMuqnp96sdhyE.gif">
-                <div style="position:absolute; margin-bottom: 40%; left: -50px; color:white;text-shadow:2px 2px 2px #000000;font-weight:bolder">Like Daaaa...</div>
+                <div style="position:absolute; margin-bottom: 40%; left: -50px; color:white;text-shadow:2px 2px 2px #000000;font-weight:bolder">
+                    Like Daaaa...
+                </div>
             </section>
             <section>
-                <h2>Static typing</h2>
+                <h2>Static typing, Type annotations</h2>
                 <p>type is associated with variable or textual expression, and checked at compile-time.</p>
                 <pre><code>
                     function g( a : number ) : number{
@@ -125,9 +122,9 @@
                 </code></pre>
             </section>
             <section>
-                <h3>Static types, type annotations, and type inference</h3>
+                <h3>Type inference</h3>
                 <blockquote>
-                    “Type inference “ — types can be determined from the context, making type annotations optional.
+                    “Types can be determined from the context, making type annotations optional.
                 </blockquote>
             </section>
             <section>
@@ -151,8 +148,10 @@
                 <img src="https://cdn-images-1.medium.com/max/1600/1*lJNwpVsKaghfDmcg4nJ1uw.png">
                 <p class="fragment">“a” is not a number, but it’s inferred as any?</p>
                 <p class="fragment">No, it’s not because TypeScript’s type inference is incapable.</p>
-                <p class="fragment">It prefers ‘any’ type to ‘number’, thus it’s dynamic by default as regular JavaScript is.</p>
-                <p class="fragment"> When you want it to be stricter, you have to add type annotation. Not vice versa.</p>
+                <p class="fragment">It prefers ‘any’ type to ‘number’, thus it’s dynamic by default as regular
+                    JavaScript is.</p>
+                <p class="fragment"> When you want it to be stricter, you have to add type annotation. Not vice
+                    versa.</p>
             </section>
             <section>
                 <blockquote>
@@ -161,21 +160,45 @@
                     but taking the best of both.
                 </blockquote>
             </section>
+            <section>
+                <h3>No Implicit Any Option</h3>
+                <pre><code>
+                    {
+                        "compilerOptions": {
+                            "module": "system",
+                            "noImplicitAny": true,  // <----
+                            "removeComments": true,
+                            "preserveConstEnums": true,
+                            "outFile": "../../built/local/tsc.js",
+                            "sourceMap": true
+                        },
+                        "include": [
+                            "src/**/*"
+                        ],
+                        "exclude": [
+                            "node_modules",
+                            "**/*.spec.ts"
+                        ]
+                    }
+                </code></pre>
+            </section>
             <section data-background="http://i.giphy.com/jSxK33dwEMbkY.gif">
-                <div style="position:absolute; margin-bottom: 40%; left: 0; color:white;text-shadow:2px 2px 2px #000000;font-weight:bolder">This is boooring...<br/> Show me the code</div>
+                <div style="position:absolute; margin-bottom: 40%; left: 0; color:white;text-shadow:2px 2px 2px #000000;font-weight:bolder">
+                    This is boooring...<br/> Show me the code
+                </div>
             </section>
         </section>
         <section>
             <section>
-            <h1>Typescript features</h1>
-            <pre class="fragment"><code>
+                <h1>Typescript features</h1>
+                <pre class="fragment"><code>
                 const num: number =1;
                 const str: string = 'Hello';
                 const bool: boolean = true;
                 const mixed1: string|number = 2;
                 const mixed2: string|number = 'World'
             </code></pre>
-            <pre class="fragment"><code>
+                <pre class="fragment"><code>
                 //Array
                  const arr:string[] = ['Hello', 'World'];
                  //Tuple
@@ -184,7 +207,7 @@
                  enum Color: {Black,White};
                  enum Company: {Other = 0, DV =100};
             </code></pre>
-            <pre class="fragment"><code>
+                <pre class="fragment"><code>
                 //Type
                  type status = 'Success'|'Error';
                  //Function
@@ -192,11 +215,10 @@
                  const goo: (x:string) => boolean;
                  public dict :{[key:string]:number} = {key1 :1, key2 :2};
             </code></pre>
-        </section>
-        <section>
-            <h2>Generics</h2>
-            <pre class="fragment"><code>
-                interface IGetValue{
+            </section>
+            <section>
+                <h2>Generics</h2>
+                <pre class="fragment"><code>
                 interface IGetValue{
                     getValues:()=> number;
                 }
@@ -210,10 +232,10 @@
                     return max;
                 }
             </code></pre>
-        </section>
-        <section>
-            <h2>Function Overloading</h2>
-            <pre class="fragment"><code>
+            </section>
+            <section>
+                <h2>Function Overloading</h2>
+                <pre class="fragment"><code>
                 function getTask(taskName:string, deps:string[]) : ITaskGroup;
                 function getTask(taskName:string, fn:Function) : ITask;
                 function getTask(taskName:string, x:any) : any{
@@ -270,6 +292,16 @@
                 </code></pre>
             </section>
             <section>
+                <h3>Template Strings</h3>
+                <pre><code>
+        const prefix = 'https';
+        const url = (domain, path, name) =>
+                        `${prefix}://${domain}/${path}?name=${'user_' + name}`
+        console.log(url('dv.com', 'register', 'miri'))
+        // https://dv.com/register?name=user_miri
+                </code></pre>
+            </section>
+            <section>
                 <h1>Duck Typing</h1>
                 <blockquote>
                     "When I see a bird that walks like a duck and swims like a duck and quacks like a duck,
@@ -286,7 +318,7 @@
                         quack : () => void;
                     }
                 </code></pre>
-                <pre  class="fragment"><code>
+                <pre class="fragment"><code>
                     let ProbablyADuck = {
                         walk : () => console.log('walking like a duck');
                         swim : () => console.log('swimming like a duck');
@@ -349,31 +381,40 @@
                     <li class="fragment">Adding Types take time and design and are not always clear in advance.</li>
                     <li class="fragment">May cause over engineering.</li>
                     <div class="fragment" style="margin: auto auto;">
-                        <img src="http://australianbusinessclinic.com/wp-content/uploads/2013/06/KISS-sleeping-man.gif" height="300px"  style="float: left">
-                        <img src="https://paljabekkdotcom.files.wordpress.com/2013/10/a5c69-rube_napkin_1.gif" height="300px" style="float: right">
+                        <img src="http://australianbusinessclinic.com/wp-content/uploads/2013/06/KISS-sleeping-man.gif"
+                             height="300px" style="float: left">
+                        <img src="https://paljabekkdotcom.files.wordpress.com/2013/10/a5c69-rube_napkin_1.gif"
+                             height="300px" style="float: right">
                     </div>
                 </ul>
             </section>
             <section>
                 <h3>So do we really need Types?</h3>
-                    They don't make QA or testing redundant.<br/>
-                    Couldn't we just really on good documentation and design?
+                They don't make QA or testing redundant.<br/>
+                Couldn't we just really on good documentation and design?
                 </p>
             </section>
             <section>
                 <blockquote>“I always make beautiful docs, and I always keep them in sync!“</blockquote>
             </section>
             <section>
-                <p style="font-size: 1.5rem">Even assuming you’re really belongs to that 1% (no doubt you are).<br/> Still, I don’t trust you. Nothing
-                    personal, it’s just because you’re a human. And humans are so unreliable… (How could you really
-                    guarantee that your docs actually conforms to the code? Are you always in the mood? Do you always
-                    have time and no excuses? Don’t you make any mistakes? Are you working on it alone, or there’s a
-                    whole team of superheroes in charge?)</p>
-                <img style="height: 350px" src="https://cdn-images-1.medium.com/max/2000/0*Ex_I6iUnaYQgU4hF.jpg">
+                <p style="font-size: 1.8rem">Humans are so unreliable…<br/> How could you really
+                    guarantee that your docs actually conforms to the code?
+                <ul>
+                    <li class="fragment">Are you always in the mood?</li>
+                    <li class="fragment">Do you always have time and no excuses?</li>
+                    <li class="fragment">Don’t you make any mistakes?</li>
+                    <li class="fragment">
+                        Are you working on it alone, or there’s a whole team of superheroes in charge?
+                    </li>
+                </ul>
+                <img class="fragment" style="height: 300px; margin: auto auto"
+                     src="https://cdn-images-1.medium.com/max/2000/0*Ex_I6iUnaYQgU4hF.jpg">
             </section>
             <section>
                 <p>Type annotations is the documentation which is checked by compiler against itself and the code.</p>
-                <p>it’s guaranteed to be correct and up-to date.<p>
+                <p>it’s guaranteed to be correct and up-to date.
+                <p>
             </section>
             <section data-state="types">
                 <div style="position: fixed; bottom: 60px; width: 100%; text-align: center; font-size: 1.5rem;">
@@ -384,22 +425,24 @@
                 </div>
             </section>
         </section>
-         <section>
-             <h1>Thank you!</h1>
-             <h3>Resources:</h3>
-             <ul>
-                 <li>
-                     <a target="_blank" href="https://medium.com/@gaperton/typescript-static-or-dynamic-64bceb50b93e#.1xwrutjit">
-                         TypeScript: Static or Dynamic? The war is over.
-                     </a>
-                 </li>
-                 <li>
-                     <a target="_blank" href="https://medium.freecodecamp.com/when-should-i-use-typescript-311cb5fe801b#.eqq9ioe0z">
-                         When should I use TypeScript?
-                     </a>
-                 </li>
-             </ul>
-         </section>
+        <section>
+            <h1>Thank you!</h1>
+            <h3>Resources:</h3>
+            <ul>
+                <li>
+                    <a target="_blank"
+                       href="https://medium.com/@gaperton/typescript-static-or-dynamic-64bceb50b93e#.1xwrutjit">
+                        TypeScript: Static or Dynamic? The war is over.
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank"
+                       href="https://medium.freecodecamp.com/when-should-i-use-typescript-311cb5fe801b#.eqq9ioe0z">
+                        When should I use TypeScript?
+                    </a>
+                </li>
+            </ul>
+        </section>
     </div>
 </div>
 
@@ -407,22 +450,22 @@
 <script src="js/reveal.js"></script>
 
 <script>
-    // More info https://github.com/hakimel/reveal.js#configuration
-    Reveal.initialize({
-        history: true,
+  // More info https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    history: true,
 
-        // More info https://github.com/hakimel/reveal.js#dependencies
-        dependencies: [
-            {src: 'plugin/markdown/marked.js'},
-            {src: 'plugin/markdown/markdown.js'},
-            {src: 'plugin/notes/notes.js', async: true},
-            {
-                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
-                hljs.initHighlightingOnLoad();
-            }
-            }
-        ]
-    });
+    // More info https://github.com/hakimel/reveal.js#dependencies
+    dependencies: [
+      { src: 'plugin/markdown/marked.js' },
+      { src: 'plugin/markdown/markdown.js' },
+      { src: 'plugin/notes/notes.js', async: true },
+      {
+        src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+        hljs.initHighlightingOnLoad();
+      }
+      }
+    ]
+  });
 </script>
 </body>
 </html>
