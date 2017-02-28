@@ -90,6 +90,7 @@
                 </p>
             </section>
             <section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+                <div style="position:absolute; margin-bottom: 40%; left: -100px; color:white;text-shadow:2px 2px 2px #000000;font-weight:bolder">So Javascript has Types...</div>
             </section>
         </section>
         <section>
@@ -105,10 +106,14 @@
             </section>
             <section>
                 <p>Valid JavaScript is also valid TypeScript!!</p>
-                <p class="fragment">So if javascript is typed so is typescript</p>
-                <h2 class="fragment">But Is Typescript Static or dynamic?</h2>
+                <img class="fragment" src="https://image.slidesharecdn.com/60586670-clojurescript-110722075813-phpapp02/95/why-you-should-be-excited-about-clojurescript-6-728.jpg?cb=1311321554"/>
+            </section>
+            <section>
+                <p>So if javascript is typed typescript obviously is.</p>
+                <p style="font-size: 4rem" class="fragment">But Is Typescript Static or dynamic?</p>
             </section>
             <section data-background="http://i.giphy.com/IMuqnp96sdhyE.gif">
+                <div style="position:absolute; margin-bottom: 40%; left: -50px; color:white;text-shadow:2px 2px 2px #000000;font-weight:bolder">Like Daaaa...</div>
             </section>
             <section>
                 <h2>Static typing</h2>
@@ -297,7 +302,7 @@
                 <p>TypeScript compiler comes with external declarations for core and DOM libraries (lib.d.ts)</p>
             </section>
             <section>
-                <h2>EXCERPT FROM LIB.D.TS #1</h2>
+                <p>EXCERPT FROM LIB.D.TS #1</p>
                 <pre><code>
                     declare function parseFloat(string: string): number;
 
@@ -311,7 +316,7 @@
                 </code></pre>
             </section>
             <section>
-                <h2>EXCERPT FROM LIB.D.TS #2</h2>
+                <p>EXCERPT FROM LIB.D.TS #2</p>
                 <pre><code>
                     interface Node extends EventTarget {
                         nodeType: number;
@@ -324,10 +329,8 @@
                 </code></pre>
             </section>
             <section>
-                <h2>Adds tooling and type checking to existing JavaScript libraries</h2>
-            </section>
-            <section>
-                <h2>EXCERPT FROM lodash/index.d.ts</h2>
+                <h2>Existing JavaScript libraries</h2>
+                <p>EXCERPT FROM lodash/index.d.ts</p>
                 <pre><code>
                     findLast&lt;T>(
                         collection: T[],
@@ -352,26 +355,25 @@
                 </ul>
             </section>
             <section>
-                <p>
-                    So do we really need Types? they don't make QA or testing redundant.
+                <h3>So do we really need Types?</h3>
+                    They don't make QA or testing redundant.<br/>
                     Couldn't we just really on good documentation and design?
                 </p>
             </section>
             <section>
-                I always make beautiful docs, and I always keep them in sync!
+                <blockquote>“I always make beautiful docs, and I always keep them in sync!“</blockquote>
             </section>
             <section>
-                <p>Even assuming you’re really belongs to that 1% (no doubt you are). Still, I don’t trust you. Nothing
+                <p style="font-size: 1.5rem">Even assuming you’re really belongs to that 1% (no doubt you are).<br/> Still, I don’t trust you. Nothing
                     personal, it’s just because you’re a human. And humans are so unreliable… (How could you really
                     guarantee that your docs actually conforms to the code? Are you always in the mood? Do you always
                     have time and no excuses? Don’t you make any mistakes? Are you working on it alone, or there’s a
                     whole team of superheroes in charge?)</p>
-                <img src="https://cdn-images-1.medium.com/max/2000/0*Ex_I6iUnaYQgU4hF.jpg">
+                <img style="height: 350px" src="https://cdn-images-1.medium.com/max/2000/0*Ex_I6iUnaYQgU4hF.jpg">
             </section>
             <section>
-                <p>Type annotations is the documentation which is checked by compiler against itself and the code; it’s
-                    guaranteed to be correct and up-to date.
-                <p>
+                <p>Type annotations is the documentation which is checked by compiler against itself and the code.</p>
+                <p>it’s guaranteed to be correct and up-to date.<p>
             </section>
             <section data-state="types">
                 <div style="position: fixed; bottom: 60px; width: 100%; text-align: center; font-size: 1.5rem;">
@@ -390,6 +392,8 @@
                      <a target="_blank" href="https://medium.com/@gaperton/typescript-static-or-dynamic-64bceb50b93e#.1xwrutjit">
                          TypeScript: Static or Dynamic? The war is over.
                      </a>
+                 </li>
+                 <li>
                      <a target="_blank" href="https://medium.freecodecamp.com/when-should-i-use-typescript-311cb5fe801b#.eqq9ioe0z">
                          When should I use TypeScript?
                      </a>
