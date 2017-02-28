@@ -196,18 +196,27 @@
         <section>
             <h2>Generics</h2>
             <pre class="fragment"><code>
-                interface IGetValue{
-                    getValues:()=> number;
+                interface ShelfItem{
+                title:string;
                 }
-                function getMax&lt;T extends IGetValue>(arr:T[]):T{
-                    let max: T = arr[0];
-                    arr.forEach((item)=>{
-                        if(max.getValue() < item.getValue()){
-                            max = item;
-                        }
-                    });
-                    return max;
+                class Shelf<T extends ShelfItem>{
+                    private _items :  Array<T> = new Array<T>();
+                    add(item:T):void{
+                        this._items.push(item);
+                    }
+                    getFirst():T{
+                        return this._items[0];
+                    }
+                    find(title:string){
+                        return this._items.filter(item => item.title === title)[0];
+                    }
+                    printTitles():void{
+                        this._items.forEach(item => console.log(item.title);)
+                    }
                 }
+                let bookShelf: Shelf<Book> = new Shelf<Book>();
+                let magazineShelf: Shelf<Magazine> = new Shelf<Magazine>();
+
             </code></pre>
         </section>
         <section>
