@@ -215,22 +215,30 @@
                  const goo: (x:string) => boolean;
                  public dict :{[key:string]:number} = {key1 :1, key2 :2};
             </code></pre>
-            </section>
-            <section>
-                <h2>Generics</h2>
-                <pre class="fragment"><code>
-                interface IGetValue{
-                    getValues:()=> number;
+        </section>
+        <section>
+            <h2>Generics</h2>
+            <pre class="fragment"><code>
+                interface ShelfItem{
+                title:string;
                 }
-                function getMax&lt;T extends IGetValue>(arr:T[]):T{
-                    let max: T = arr[0];
-                    arr.forEach((item)=>{
-                        if(max.getValue() < item.getValue()){
-                            max = item;
-                        }
-                    });
-                    return max;
+                class Shelf&lt;T extends ShelfItem>{
+                    private _items :  Array&lt;T = new Array&lt;T();
+                    add(item:T):void{
+                        this._items.push(item);
+                    }
+                    getFirst():T{
+                        return this._items[0];
+                    }
+                    find(title:string){
+                        return this._items.filter(item => item.title === title)[0];
+                    }
+                    printTitles():void{
+                        this._items.forEach(item => console.log(item.title);)
+                    }
                 }
+                let bookShelf: Shelf&lt;Book = new Shelf&lt;Book();
+                let magazineShelf: Shelf&lt;Magazine = new Shelf&lt;Magazine();
             </code></pre>
             </section>
             <section>
@@ -258,7 +266,7 @@
                 <h1>ES6 features</h1>
             </section>
             <section>
-                <h3>Destructioning</h3>
+                <h3>Destructuring</h3>
                 <pre class="fragment"><code>
                     var obj = {a: 10, b: 20};
                     var a = obj.a;
