@@ -215,10 +215,38 @@
                  const goo: (x:string) => boolean;
                  public dict :{[key:string]:number} = {key1 :1, key2 :2};
             </code></pre>
-        </section>
-        <section>
-            <h2>Generics</h2>
-            <pre class="fragment"><code>
+            </section>
+            <section>
+                <h1>Duck Typing</h1>
+                <blockquote>
+                    "When I see a bird that walks like a duck and swims like a duck and quacks like a duck,
+                    I call that bird a duck."
+                    <span>James Whitcomb Riley</span>
+                </blockquote>
+                <img src="https://coronalabs.com/wp-content/uploads/2012/09/duck_typing.png">
+            </section>
+            <section>
+                <pre><code>
+                    interface Duck{
+                        walk:()=> void;
+                        swim : () => void;
+                        quack : () => void;
+                    }
+                </code></pre>
+                <pre class="fragment"><code>
+                    let ProbablyADuck = {
+                        walk : () => console.log('walking like a duck');
+                        swim : () => console.log('swimming like a duck');
+                        quack : () => console.log('quacking like a duck');
+                    };
+
+                    function FlyOverWater(bird : Duck){}
+                    FlyOverWater(ProbablyADuck); //works!!!
+                </code></pre>
+            </section>
+            <section>
+                <h2>Generics</h2>
+                <pre class="fragment"><code>
                 interface ShelfItem{
                 title:string;
                 }
@@ -246,7 +274,7 @@
                 <pre class="fragment"><code>
                 function getTask(taskName:string, deps:string[]) : ITaskGroup;
                 function getTask(taskName:string, fn:Function) : ITask;
-                function getTask(taskName:string, x:any) : any{
+                function getTask(taskName:string, x:any) : any {
                     if(typeof x === 'function'){
                         return {
                             taskName,
@@ -258,7 +286,6 @@
                             taskName,
                             deps:x
                     };
-                }
                 }
 
             </code></pre>
@@ -307,34 +334,6 @@
                         `${prefix}://${domain}/${path}?name=${'user_' + name}`
         console.log(url('dv.com', 'register', 'miri'))
         // https://dv.com/register?name=user_miri
-                </code></pre>
-            </section>
-            <section>
-                <h1>Duck Typing</h1>
-                <blockquote>
-                    "When I see a bird that walks like a duck and swims like a duck and quacks like a duck,
-                    I call that bird a duck."
-                    <span>James Whitcomb Riley</span>
-                </blockquote>
-                <img src="https://coronalabs.com/wp-content/uploads/2012/09/duck_typing.png">
-            </section>
-            <section>
-                <pre><code>
-                    interface Duck{
-                        walk:()=> void;
-                        swim : () => void;
-                        quack : () => void;
-                    }
-                </code></pre>
-                <pre class="fragment"><code>
-                    let ProbablyADuck = {
-                        walk : () => console.log('walking like a duck');
-                        swim : () => console.log('swimming like a duck');
-                        quack : () => console.log('quacking like a duck');
-                    };
-
-                    function FlyOverWater(bird : Duck){}
-                    FlyOverWater(ProbablyADuck); //works!!!
                 </code></pre>
             </section>
             <section>
@@ -447,6 +446,12 @@
                     <a target="_blank"
                        href="https://medium.freecodecamp.com/when-should-i-use-typescript-311cb5fe801b#.eqq9ioe0z">
                         When should I use TypeScript?
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank"
+                       href="https://visualstudiomagazine.com/articles/2015/12/01/exploiting-generics.aspx">
+                        Exploiting Generics in TypeScript
                     </a>
                 </li>
             </ul>
