@@ -238,7 +238,7 @@
                 <pre class="fragment"><code>
                 function getTask(taskName:string, deps:string[]) : ITaskGroup;
                 function getTask(taskName:string, fn:Function) : ITask;
-                function getTask(taskName:string, x:any) : any{
+                function getTask(taskName:string, x:any) : any {
                     if(typeof x === 'function'){
                         return {
                             taskName,
@@ -250,7 +250,6 @@
                             taskName,
                             deps:x
                     };
-                }
                 }
 
             </code></pre>
@@ -439,6 +438,12 @@
                     <a target="_blank"
                        href="https://medium.freecodecamp.com/when-should-i-use-typescript-311cb5fe801b#.eqq9ioe0z">
                         When should I use TypeScript?
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank"
+                       href="https://visualstudiomagazine.com/articles/2015/12/01/exploiting-generics.aspx">
+                        Exploiting Generics in TypeScript
                     </a>
                 </li>
             </ul>
